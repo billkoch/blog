@@ -1,0 +1,11 @@
+billkoch.io {
+    proxy / ghost:2368 {
+        header_upstream Host {host}
+        header_upstream X-Real-IP {remote}
+        header_upstream X-Forwarded-Proto {scheme}
+    }
+}
+
+www.billkoch.io {
+    redir https://billkoch.io
+}
